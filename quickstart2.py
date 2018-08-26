@@ -18,26 +18,27 @@ session = InstaPy(username=insta_username, headless_browser=False, password=inst
 session.login()
 
 # set up all the settings
-# session.set_relationship_bounds(enabled=False,
-# 				 potency_ratio=-1.21,
-# 				  delimit_by_numbers=True,
-# 				   max_followers=4590,
-# 				    max_following=5555,
-# 				     min_followers=45,
-# 				      min_following=77)
+session.set_relationship_bounds(enabled=True,
+				 potency_ratio=-0.5,
+				  delimit_by_numbers=True,
+				   max_followers=5999,
+				    max_following=8000,
+				     min_followers=35,
+				      min_following=45)
 session.set_user_interact(amount=4, randomize=True, percentage=50, media='Photo')
 session.set_do_comment(True, percentage=20)
-session.set_comments([u'Hit my Dm!', 'I miss stuff like this!!', 'Nicey!, I love the way this looks!'])
+session.set_comments(['Hit my Dm!', 'I miss stuff like this!!', 'Nicey!, I love the way this looks!'])
 
 # session.set_dont_include(['friend1', 'friend2', 'friend3'])
 # session.set_dont_like(['pizza', 'girl'])
 
-session.follow_user_followers(['lilskies', 'laflare1017', 'liluzivert'], amount=30, randomize=True, interact=True, sleep_delay=600)
-session.unfollow_users(amount=60, InstapyFollowed=(True, "all"), style="RANDOM", unfollow_after=90*60*60, sleep_delay=501)
+session.follow_user_followers(['lilskies', 'laflare1017', 'liluzivert'], amount=100, randomize=True, interact=True, sleep_delay=600)
+
 
 
 # do the actual liking
 session.like_by_tags(['hiphop', 'girl', 'art', 'rap'], amount=100)
+session.unfollow_users(amount=60, InstapyFollowed=(True, "all"), style="RANDOM", unfollow_after=100*60, sleep_delay=501)
 
 
 # except Exception as exc:
